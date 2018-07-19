@@ -1,0 +1,292 @@
+@charset "UTF-8";
+//选择城市
+
+.locate {
+    @include height(true,2.2rem,2.2rem);
+    background-color: #fff;
+    @extend %spaceBetween;
+    font-size: .7rem;
+    .text{
+        color: #333333;
+        i{
+            display: inline-block;
+            @include backgroundImages('/icon/icon_locate.png',.55rem,.7rem);
+            margin: 0 .2rem 0 .775rem;
+            vertical-align: middle;
+        }
+    }
+    .redirect{
+        color: #999;
+        padding-right: 1.35rem;
+    }
+}
+.hot_city{
+    .hot-trade{
+        font-size: .7rem;
+        color: #999;
+        height: 1rem;
+        padding: 9px 0 0 15px;
+    }
+    .city-place-name{
+        padding-left: 15px;
+        li{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            display: inline-block;
+            width: 5.1rem;
+            @include height(true,1.95rem,1.95rem);
+            background: #FFFFFF;
+            border: 1px solid #EEEEEE;
+            border-radius: 4px;
+            text-align: center;
+            font-size: .7rem;
+            color: #333333;
+            margin: 9px 9px 0 0;
+        }
+    }
+}
+.city_list{
+    font-size: 0.8rem;
+    overflow: auto;
+    height: 100%;
+    .city-place-list{
+        height: 100%;
+        dl{
+            dt{
+                font-size: .7rem;
+                color: #999;
+                @include height(true,1.75rem,1.75rem);
+                padding-left: .75rem; 
+            }
+            dd{
+                background: #fff;
+                font-size: .75rem;
+                color: #333;
+                @include height(true,2.2rem,2.2rem);
+                padding-left: .75rem;
+                position: relative;
+                &:after{
+                    content:'';
+                    position: absolute;
+                    left: 0;
+                    bottom: 1px;
+                    width: 96%;
+                    height: 1px;
+                    background-color:#EEE;
+                    transform:scaleY(.5);
+                    -webkit-transform:scaleY(.5);
+                    margin-left: .75rem; 
+                }
+                &:last-of-type:after{display: none;}
+            }
+        }
+    }
+}
+.letter_list{
+    position: absolute;
+    width: 1.35rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    padding-top: 2.5rem;
+    .active{
+        background:rgba(211,211,211,.6);
+    }
+    a{
+        display: block;
+        text-align: center;
+        font-size: .6rem;
+        color: #FF810C;
+        line-height: .8rem;
+        width: .8rem;
+        &.active{
+            background: #FF810C;
+            color: #FFF;
+            border-radius: 50%;
+        }
+    }
+}
+
+//商户搜索
+
+.search-nav-bar {
+    position: relative;
+    .nav {
+        background: #FFF;
+        border-top: 1px solid #EEE;
+        text-align: center;
+        @include height(true,2rem,2rem);
+        -webkit-user-select: none;
+        .dropdown-toggle {
+            border-left: 1px solid #EEE;
+            text-align: left;
+            text-align: center;
+            height: inherit;
+            line-height:inherit;
+            display: inline-block;
+            width: 33%;
+            span{
+                display: inline-block;
+                height: 1.4rem;
+                line-height: 1.4rem;
+                width:4.9rem;
+                background-color: #F1F2F7;
+                border-radius: 5px;
+                &.active {
+                    color: #FF810C;
+                    &:after {
+                        border-top: 0;
+                        border-left: .2rem solid transparent;
+                        border-right: .2rem solid transparent;
+                        border-bottom: .25rem solid #FF810C;
+                        margin-bottom: 0;
+                        margin-left: 4px;
+                    }
+                }
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    display: inline-block;
+                    border-top: .25rem solid #999;
+                    border-left: .2rem solid transparent;
+                    border-right: .2rem solid transparent;
+                    border-bottom: 0;
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+    .dropdown-list-bg{
+        background-color: #99999988;
+        position: absolute;
+        top:2rem;
+        width: 100%;
+        z-index: 999;
+        border-top: 1px solid #EEE;
+    }
+    .dropdown-list{
+        background-color: #FFF;
+        overflow: auto;
+        li {
+            border-bottom: 1px solid #EEE;
+            @include height(true,2rem,2rem);
+            background-color: #FFF;
+            margin-left: 15px;
+            &.active {
+                color: #FF810C;
+                display: block;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 10;
+                    right: .8rem;
+                    bottom: .75rem;
+                    width: .3rem;
+                    height: .5rem;
+                    transform: rotate(40deg);
+                    -webkit-transform: rotate(40deg);
+                    border-radius: 0 0 .075rem 0;
+                    border-bottom: 2px solid #FF810C;
+                    border-right: 2px solid #FF810C;
+                    line-height: 1;
+                    color: #FF810C;
+                }
+            }
+            &:last-child{
+                border: 0;
+            }
+        }
+    }
+}
+
+
+
+
+//无结果
+.no_result{
+    height: 100%;
+    background-color: #F0F2F5;
+    text-align: center;
+    img{
+        margin-top: 6rem;
+        width: 4rem;
+    }
+    .text{
+        margin: .75rem auto;
+        font-size: .8rem;
+        color: #333;
+    }
+}
+
+//
+.search_section{
+    background: #FFF;
+    .search_section_title{
+        font-size: .7rem;
+        color: #999;
+        height: 1rem;
+        padding: 15px 0 12px 15px;
+    }
+    .search_popular_section{
+        padding-left: 15px;
+        li{
+            font-size: .65rem;
+            display: inline-block;
+            padding: .4rem .6rem;
+            line-height: .75rem;
+            background: #F0F2F5;
+            border-radius: 4px;
+            margin: 0 .4rem .5rem 0;
+        }
+    }
+    .search_list{
+        position: relative;
+        li{
+            height: 2.2rem;
+            line-height: 2.2rem;
+            margin-left: .75rem;
+            position: relative;
+            border-bottom: 1px solid #EEE;
+            position: relative;
+            a{
+                display: block;
+                font-size: .75rem;
+                color: #333;
+                span{
+                    float: right;
+                    color: #999;
+                    margin-right: .75rem;
+                }
+                .icon_search{
+                    display: inline-block;
+                    @include backgroundImages('/icon/icon_search.png',.6rem,.6rem);
+                    margin-right: 4px;
+                } 
+            }
+            p{
+                height: 2.2rem;
+                width: 2.2rem;
+                text-align: center;
+                line-height: 2.2rem;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+            }
+            .icon_del{
+                display: inline-block;
+                @include backgroundImages('/icon/icon_del.png',.7rem,.7rem);
+            }
+        }
+    }
+}
+.search_history_clear{
+    @include height(true,2.2rem,2.2rem);
+    text-align: center;
+    font-size: .75rem;
+    display: block;
+    border: none;
+    color: #FF810C;
+}

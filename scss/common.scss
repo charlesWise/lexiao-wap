@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "sassCore/base";//引用base
+@import "base/mixin"; //sassCore 文件引用
+@import "base/global"; //sassCore 文件引用
+@import "base/sprites"; //compass 雪碧图 基本引用
+@import 'base/variable'; // 网站基础变量设置
+@import 'base/button'; // 按钮
+@import 'base/cell'; // cell
+@import 'base/tabbar'; // tabbar
+@import 'base/tabs'; // 选项卡
+@import 'base/filterbar'; //过滤器
+@import "base/icons"; //icons
+@import "sassCore/core/setting"; //sassCore 文件引用
+@import "sassCore/core/css3"; //sassCore 文件引用
+@import "sassCore/core/mixin"; //sassCore 文件引用
+@import 'base/searchbar';//搜索
+@import 'base/screenui';//screenui
+@import 'base/welfarelist';//福利列表
+
+@import 'pages/index'; //福利首页
+@import 'pages/search'; //搜索
+@import 'pages/shake'; //摇一摇
+@import 'pages/group'; //三级联动
+@import 'pages/merchant'; //商户详情
+@import 'pages/purchase'; //买单
+
+@import 'pages/welfare'; //我的福利
+@import 'pages/payment'; //我的买单
+@import 'pages/paybox'; //我的买单
+@import 'pages/merchantsettled'; //商户入驻
+@import 'pages/mymerchant'; //我是商户
+@import 'pages/cash'; //提现
+@import 'pages/coupon'; //优惠券管理
+@import 'pages/submerchant'; //子账户管理 & 职员管理
+@import 'pages/inviteuser'; //邀请用户
+
+@import 'pages/business'; //添加商户
+@import 'pages/mybusiness'; //我是BD
+@import 'pages/subbusiness'; //BD子账户
+
+@import 'pages/register'; //注册
+@import 'pages/_clipimage'; //剪切图片

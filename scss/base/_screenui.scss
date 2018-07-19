@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.screenui-modal{
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+.screenui-alertui-bg{
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(120,120,120,0.5);
+}
+.screenui-alertui{
+   position: absolute;
+    width: 15.55rem;
+    margin: auto;
+    left:0;
+    right:0; 
+    background:#FFFFFF;
+    border-radius: 5px;
+}
+%screenui-alertui-text{
+    font-size: 0.65rem;
+    line-height: 1rem;
+    color:#333333;
+    text-align: center;
+}
+.screenui-alertui-title{
+    @extend %screenui-alertui-text;
+    padding: 1.4rem 0.8rem;
+    
+}
+.screenui-alertui-message{
+    @extend %screenui-alertui-text;
+    padding: 1.4rem 0.8rem;
+    
+}
+.screenui-alertui-button-border{
+    border-top:1px solid  rgba(0,0,0, 0.12);
+}
+%screenui-alertui-button-base{
+    color:#FF810C;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 2.2rem;
+    height: 2.2rem;
+}
+.screenui-alertui-button{
+    @extend %screenui-alertui-button-base;
+}
+.screenui-alertui-button-2{
+    @extend %screenui-alertui-button-base;
+    width:49%;
+    display: inline-block;
+}
+.screenui-toast{
+    position: fixed;
+    z-index: 1001;
+    bottom:10rem;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    width: 13.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    border-radius:1rem;
+    text-align: center;
+    color:#fff;
+    background-color: rgba(0,0,0,0.7);
+}

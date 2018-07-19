@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import "compass/utilities/sprites"; //引用compass 下的sprites组件
+/**
+ * @name: compass sprites
+ * @overview: 用compass 合并精灵图，可以达到网站所有精妙图全自动化的识别它的具体width,height,position值，方便后面的维护,调用方式  @include icons-sprite(upg);
+ * @include 文件夹名称-sprite(具体对应的目标图片);
+ * @require: 以 icon-图片名称 的class 属性
+ * @author: zhangyl
+*/
+//生成新图，删除的老图
+$icons-clear-up:true;
+
+//精灵图之间的间距
+$icons-spacing:15px;
+//是否重复
+$icons-repeat:no-repeat;
+
+// $icons-sprite-base-class:".icons-bg"; //重新命名
+
+//是否显示精灵图的尺寸，默认是FALSE 1手动打开
+$icons-sprite-dimensions: true;
+
+//有四种方法 ertical/horizontal/diagonal/smart;  默认布局方式为vertical
+$spritebig-layout: smart;
+
+
+//关掉图片:hover :active :target效果，如果图片有这几种状态，它会自动识别
+$disable-magic-sprite-selectors:false;
+
+//@import "icons/*.png";  //小ICON集合

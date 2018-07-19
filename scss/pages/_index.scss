@@ -1,0 +1,365 @@
+@charset "UTF-8";
+
+i, em, cite { font-style: normal; }
+i,span,a{*display:inline;letter-spacing:normal;word-spacing: normal; }
+
+%relative{
+	@include position(relative);
+}
+%absolute{
+	@include position(absolute);
+}
+
+%fl{@include float(left);}
+%fr{@include float(right);}
+
+%spaceBetween{
+    display: -webkit-box;
+    @include displayFlex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+%displaybox{
+    display:box;
+    display:-webkit-box;
+    display:-moz-box;
+}
+.orange{
+    color:#FF810C!important;
+}
+//首页
+
+.index_sale_block {
+    margin: .45rem auto;
+    background-color: #fff;
+    .index_title {
+        display: block;
+        @extend %relative;
+        line-height: 2.3rem;
+        font-size: .8rem;
+        color: #333;
+        padding-left: .75rem;
+        .title_left{
+            display: inline-block;
+            width: .125rem;
+            background: #333;
+            border-radius: 2.5rem;
+            height: .525rem;
+            vertical-align: middle;
+        }
+        .more {
+            font-size: .6rem;
+            @extend %fr;
+            color:#FF810C;
+            padding-right: 1.275rem;
+            .arrowent {
+                position: absolute;
+                right: .75rem;
+                top: 50%;
+                margin-top: -4px;
+                border: 1px solid #FF810C;
+                transform: rotate(45deg);
+                width: .3rem;
+                height: .3rem;
+                border-bottom: none;
+                border-left: none;
+                -webkit-transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+//精品福利
+.index_jp {
+    height: 4.25rem;
+    background-color: #fff;
+    //width:100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .index_jp_item {
+        display: inline-block;
+        height:  3.5rem;
+        width: 8.25rem;
+        background-size: 100% 100%;
+        margin-right: 0.45rem;
+        margin-bottom:0.75rem;
+        a{
+            display: table; 
+            width: 100%;
+            height: 100%;
+            position: relative;
+            color: #fff;
+            .index_jp_item_welfare_name{
+                width: .825rem;
+                font-size: 0.9rem;
+                line-height: 1rem;
+                color:#fff;
+                display:table-cell; 
+                vertical-align:middle; 
+                right:0;
+                top:0;
+                padding:0 0.4rem;
+                text-align: center;
+            }
+            .index_jp_item_welfare_info{
+                display:table-cell; 
+                vertical-align:middle; 
+                padding-left:0.55rem;
+                .index_jp_item_welfare_amount{
+                    font-size: 1.65rem;
+                    line-height: 1.66rem;
+                    &:before{
+                        content: '￥';
+                        font-size:0.8rem
+                    }
+                }
+                .index_jp_item_welfare_plat{
+                    margin-top: 0.1rem;
+                    line-height: 0.66rem;
+                    font-size: 0.65rem
+                }
+            }
+        }
+        &:first-child{
+          //  margin-left: 0.75rem
+        }
+        &:last-child{
+           // margin-right: 0.75rem
+        }
+    }
+}
+//广告
+.index_advert{
+    height:4.25rem;
+    width:100%;
+}
+//附近福利
+
+//加载 查看更多
+.load-wrap {
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    color: #666;
+    .loading-img {
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+}
+.load-more {
+    display: block;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+}
+
+//未开通
+.not_open{
+    background: #FFF;
+    text-align: center;
+    padding: 1.5rem 0;
+    img{
+        width: 2.7rem;
+    }
+    .not_open_hei{
+        font-size: .9rem;
+        color: #333;
+        line-height: 1.125rem;
+        padding-top: .7rem;
+    }
+    .not_open_hui{
+        font-size: .65rem;
+        color: #999;
+        padding-top: .25rem;
+    }
+    .not_open_btn{
+        display: block;
+        background: #FF810C;
+        border-radius: 10px;
+        width: 7.5rem;
+        @include height(true,2.2rem,2.2rem);
+        color: #fff;
+        margin: 1.3rem auto;
+    }
+}
+
+//服务授权
+.mask{
+	width: 100%; height: 100%;
+	@include opacity;
+	@include bgcolor-alpha($bgcolor: rgba(0,0,0,.4));
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;
+    &.mask-zindex {
+        z-index: 3;
+    }
+    &.search-zindex {
+        z-index: 4;
+    }
+}
+.authorized{
+    padding: 1rem;
+    background: #FFFFFF;
+    border-radius: 16px;
+    @extend %absolute;
+    width: 13.55rem;
+    height: 10.775rem;
+    top: 20%;
+    left: 50%;
+    margin-left: -7.775rem;
+    z-index: 11;
+    .accredit_tit{
+        font-size: 1rem;
+        color: #333;
+        text-align: center;
+        line-height: 1.4rem;
+        margin-bottom: .8rem;
+    }
+    .accredit_ts{
+        font-size: .8rem;
+        color: #666;
+        line-height: 1.125rem;
+        margin-bottom: .4rem;
+        em{
+            color: #151515;
+        }
+    }
+    .accredit_hq{
+        font-size: .6rem;
+        color: #999;
+        line-height: .925rem;
+        margin-bottom: 1.125rem;
+        i{
+            display: inline-block;
+            width: .2rem;
+            height: .2rem;
+            background: #999;
+            border-radius: 50%;
+            margin-right: .3rem;
+            vertical-align: middle;
+        }
+    }
+    .accredit_ty{
+        font-size: .6rem;
+        color: #999;
+        line-height: .825rem;
+        margin-bottom: .6rem;
+        em{
+            color: #508CEE;
+        }
+    }
+    .accredit_btn{
+        width: 13.55rem;
+        @include height(true,2.45rem,2.45rem);
+        display: block;
+        background: #FF810C;
+        border-radius: 10px;
+        font-size: .9rem;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .closed{
+        @extend %absolute;
+        right: .9rem;
+        top: 1.3rem;
+        @include backgroundImages('/icon/icon_closed.png',.775rem,.775rem);
+    }
+}
+
+//弹框
+.popup{
+    .manual_popup{
+        width: 15.55rem;
+        background: #FFFFFF;
+        border-radius: 16px;
+        position: absolute;
+        top: 10rem;
+        left: 1.6rem;
+        text-align: center;
+        z-index: 300;
+        .text{
+            color: #333;
+            font-size: .65rem;
+            line-height: .975rem;
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+            padding: 1.4rem .8rem 1.05rem .8rem;
+        }
+        .popup_btn{
+            font-size: .8rem;
+            line-height: 2.575rem;
+            color: #FF810C;
+        }
+        &.switch_popup{
+            .switch_btn{
+                line-height: 2.575rem;
+                a{
+                    display: inline-block;
+                    font-size: .8rem;
+                    color: #FF810C;
+                    width: 7.75rem;
+                    &:first-child{
+                        border-right: 1px solid rgba(0,0,0,0.12);
+                    }
+                }
+            }
+        }
+    }
+}
+.pop-sq{
+    position: absolute;
+    top: 12rem;
+    left: 3.3rem;
+    width: 12.15rem;
+    background: #FBFBFC;
+    border: 1px solid #E5E5E5;
+    border-radius: 7px;
+    font-size: .75rem;
+    color: #333333;
+    line-height: 1rem;
+    padding: .475rem 0;
+    text-align: center;
+}
+
+i.check_true{
+    width: .75rem;
+    height: .75rem;
+    background: #ff912b;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    &:before{
+      content: "";
+      width: .4rem;
+      border: 1px solid #fff;
+      display: block;
+      height: .2rem;
+      border-top: none;
+      border-right: none;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      margin-top: .2rem;
+      margin-left: .15rem;
+    }
+  }
+
+
+i.check_empty{
+    width: .75rem;
+    height: .75rem;
+    background:  #EEEEEE;
+    border:1px solid #D4D4D4;
+    border-radius: 50%;
+    display: block;
+  }

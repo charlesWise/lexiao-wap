@@ -1,0 +1,406 @@
+@charset "UTF-8";
+//入驻首页
+.merchant-settled {
+    background-color: #fff; //邀请入驻
+    &.-invite {
+        padding-bottom: 2.5rem;
+        background-color: transparent;
+        .-feedback {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: #f6f6f6;
+            span {
+                line-height: 2.5rem;
+                color: #FF810C;
+            }
+        }
+    } // 邀请入驻信息
+    &.-invite-data {
+        // padding-top: .45rem;
+        background-color: #f6f6f6;
+        .head {
+            @include displayFlex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: .75rem;
+            background-color: #fff;
+            .picture {
+                width: 3.65rem;
+                height: 3.65rem;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            h2 {
+                padding-left: .75rem;
+                font-size: .75rem;
+            }
+        }
+        .cell {
+            padding-top: 0;
+            background-color: #fff;
+        }
+        .-basic,
+        .-reg {
+            box-sizing: border-box;
+            min-height: 90%;
+            background-color: #fff;
+        }
+        .-award {
+            padding: .75rem;
+            box-sizing: border-box;
+            min-height: 90%;
+            background-color: #fff;
+            .-award-table {
+                width: 100%;
+                background: #FCFCFC;
+                border: 1px solid #eee;
+                td,
+                th {
+                    width: 50%;
+                    height: 1.95rem;
+                    line-height: 1.95rem;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    color: #999;
+                    font-size: .65rem;
+                }
+                th {
+                    font-size: .7rem;
+                    background-color: #FFF1E3;
+                    color: #5D4219;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    .focus-figure {
+        box-sizing: border-box;
+        padding: 1.25rem 0 0 1.8rem;
+        height: 5.25rem;
+        background: #ffc53a url(/images/apply/focus_figure.png) no-repeat 9rem bottom / 9rem 5rem;
+        h2 {
+            font-size: 1.05rem;
+            color: #fff;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        p {
+            font-size: .7rem;
+            color: #fff;
+        }
+    }
+    .invite-bd {
+        padding: .75rem;
+        background-color: #fff;
+        dt {
+            font-size: .8rem;
+            padding-bottom: .25rem;
+        }
+        dd {
+            color: #666;
+            font-size: .7rem;
+        }
+    }
+    .btn-wrap {
+        padding: .75rem;
+        text-align: center;
+        .btn-primary-hollow {
+            margin-top: .75rem;
+        }
+        .-apply-state {
+            display: block;
+            padding-top: .5rem;
+            text-align: center;
+            .-msg {
+                font-size: .65rem;
+            }
+            .-link {
+                padding: .75rem;
+                color: #FF810C;
+                a {
+                    margin: 0 .5rem;
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .-join-data-link {
+            padding-bottom: 1.5rem;
+            text-align: left;
+            a {
+                color: rgba(82,148,255,1);
+            }
+        }
+    }
+    input {
+        @include displayFlex;
+        @include boxFlex(auto);
+        padding: .25rem 0;
+        min-height: 1.45rem;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        border: none;
+        text-align: left;
+        &::-webkit-input-placeholder { 
+            color: #BDBDBD;
+        }
+        &:focus {
+            background: no-repeat 0 0 scroll ＃EEEEEE;
+            border: none;
+            outline: medium;
+            color: #333;
+        }
+    }
+    .-value {
+        @include displayFlex;
+        position: relative;
+        @include boxFlex(1);
+        width: 100%;
+        min-height: 1.45rem;
+        line-height: 1.45rem;
+        text-align: left;
+        i.division {
+            margin: 0 .8rem 0 0;
+        }
+        input {
+            &.area-code {
+                width: 1rem;
+            }
+            &.seat-number {
+                width: 5rem;
+            }
+        }
+        span.switch {
+            color: #ff810c;
+            font-size: .6rem;
+            margin: 0 .65rem 0 0;
+        }
+        &.-c-gray {
+            line-height: 1.5;
+            min-height: 1.225rem;
+            padding-top: .225rem;
+            color: #999;
+        }
+        &.-address {
+            display: block;
+            &:after {
+                content: '';
+                position: absolute;
+                right: 2px;
+                top: .55rem;
+                border: 1px solid #999;
+                transform: rotate(45deg);
+                width: .3rem;
+                height: .3rem;
+                border-bottom: none;
+                border-left: none;
+                -webkit-transform: rotate(45deg);
+            }
+        }
+        
+        .-select {
+            position: relative;
+            width: 100%;
+            &:after {
+                content: '';
+                position: absolute;
+                right: 2px;
+                top: 50%;
+                margin-top: -.2rem;
+                border: 1px solid #999;
+                transform: rotate(45deg);
+                width: .4rem;
+                height: .4rem;
+                border-bottom: none;
+                border-left: none;
+                -webkit-transform: rotate(45deg);
+            }
+            select {
+                width: 100%;
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}
+
+//首页-入驻条件
+.join-condition {
+    padding: 1rem 1rem 0;
+    .-condition-item {
+        position: relative;
+        padding-left: 2.6rem;
+        padding-bottom: 1.5rem;
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 10;
+            left: 1.185rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #FF810C;
+        }
+        .title {
+            position: relative;
+            font-size: .75rem;
+            &:after {
+                content: '1';
+                display: block;
+                position: absolute;
+                z-index: 100;
+                left: -2.1rem;
+                top: 0;
+                width: 1.35rem;
+                height: 1.35rem;
+                line-height: 1.35rem;
+                text-align: center;
+                border-radius: 1.35rem;
+                background-color: #FF810C;
+                color: #fff;
+            }
+        }
+        .desc {
+            padding-top: .25rem;
+            font-size: .6rem;
+            color: #999;
+        }
+        &:nth-child(2) {
+            .title {
+                &:after {
+                    content: '2';
+                }
+            }
+        }
+        &:nth-child(3) {
+            &:after {
+                display: none;
+            }
+            .title {
+                &:after {
+                    content: '3';
+                }
+            }
+        }
+        .-data {
+            padding-top: .35rem;
+            dl {
+                dt {
+                    font-size: .65rem;
+                    color: #5294FF;
+                }
+                dd {
+                    overflow: hidden;
+                    padding-top: .75rem;
+                    figure {
+                        padding-right: 2rem;
+                        float: left;
+                        width: 2.5rem;
+                        text-align: center;
+                        img {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                        figcaption {
+                            padding-top: .375rem;
+                            font-size: .6rem;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//入驻申请表单
+.join-apply {
+    border-top: 1px solid #eee;
+    .head {
+        position: relative;
+        @include displayFlex;
+        padding-left: .75rem;
+        height: 2.5rem;
+        justify-content: left;
+        align-items: center;
+        font-size: .75rem;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: block;
+            margin-top: -.4rem;
+            width: .2rem;
+            height: .8rem;
+            background-color: #FF810C;
+        }
+        span {
+            font-size: .6rem;
+            color: #FF810C;
+        }
+    }
+    .body {
+        padding-top: 0;
+    }
+}
+
+.TextPopup{
+    position: absolute;
+    background: #FFF;
+    width: 16.75rem;
+    height: 8.25rem;
+    padding: .95rem 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    z-index: 300;
+    textarea{
+        resize: none;
+        width: 100%;
+        min-height: 6.5rem;
+        border: 0;
+        font-size: .75rem;
+        line-height: 1.05rem;
+        font-size: .7rem;
+        color: #333;
+        &::-webkit-input-placeholder { 
+            color: #999;
+        }
+        &:focus {
+            color: #333;
+        }
+    }
+    em{
+        position: absolute;
+        right: 4.7rem;
+        bottom: .75rem;
+        font-size: .75rem;
+        color: #666;
+    }
+    a{
+        position: absolute;
+        right: 1rem;
+        bottom: .75rem;
+        width: 3.2rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        background: #FF810C;
+        border-radius: 2.5rem;
+        font-size: .7rem;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .icon_del{
+        @extend %absolute;
+        right: 1rem;
+        top: 1rem;
+        @include backgroundImages('/icon/icon_del.png',.7rem,.7rem);
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "lexiao",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node build.js --env dev --dist dist --entry project.js",
+    "ft": "node build.js --env ft --dist dist --entry project.js",
+    "uat": "node build.js --env uat --dist dist --entry project.js",
+    "release": "node build.js --env prod --dist dist --entry project.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-hash": "^4.1.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "http-proxy-middleware": "^0.17.4",
+    "spencer-kit-project-templates": "0.0.5",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "es5-shim": "^4.5.9",
+    "es6-shim": "^0.35.3",
+    "es6-symbol": "^3.1.1",
+    "es7-shim": "^6.0.0",
+    "js-console": "0.0.1",
+    "js-core-animation": "0.0.2",
+    "lodash": "^4.17.4",
+    "mlux": "^0.2.16",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-navigation": "^1.0.0-beta.21",
+    "web-http": "^1.0.1"
+  }
+}

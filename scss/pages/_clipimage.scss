@@ -1,0 +1,83 @@
+@charset "UTF-8";
+.clip-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  .clip-image{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+  }
+  .image-thumb {
+    position: absolute;
+    //bottom: 2rem;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    bottom: 2.3rem;
+    li {
+      display: inline-block;
+      width: 2.55rem;
+      height: 2.55rem;
+      margin-left: .6rem;
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: .2rem;
+        box-sizing: border-box;
+      }
+      &.check_true{
+        i{
+          position: absolute;
+          top: .15rem;
+          right: .15rem;
+          @include backgroundImages('/icon/check_true.png',.7rem,.7rem);
+        }
+        img{
+          border: .1rem solid #ff912b;
+          box-sizing: border-box;
+        }
+      }
+      &.check_false{
+        i{
+          position: absolute;
+          top: .15rem;
+          right: .15rem;
+          @include backgroundImages('/icon/check_false.png',.7rem,.7rem);
+          }
+        }
+      }
+    }
+
+  .clip-bottom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    span{
+      color: #FFF;
+      margin: .6rem 0 .3rem .7rem;
+      line-height: 1.5rem;
+    }
+    button{
+      background: #ff912b;
+      color: #FFF;
+      border: none;
+      width: 3.25rem;
+      height: 1.5rem;
+      border-radius: 2.5rem;
+      margin: .5rem .6rem .3rem 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

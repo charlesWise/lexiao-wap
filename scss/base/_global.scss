@@ -1,0 +1,135 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start:0px;    
+}
+#react-placeholder,
+body,
+html {
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    width: 100%;
+}
+a, button, input, div, span, p, li, img, h1, h2, h3, h4, h5,h6{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+#react-placeholder,
+body {
+    font-size: 14px;
+    background: #f6f6f6;
+    width: 18.75rem;
+    margin: 0;
+}
+
+.background-white{
+    background-color: #fff
+}
+
+.header {
+    position: relative;
+    height: 2.25rem;
+    background-color: #fff;
+    z-index: 5;
+    .title {
+        height: 2.25rem;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .goback {
+        position: absolute;
+        width: 2rem;
+        text-align: left;
+        height: 2.25rem;
+        overflow: hidden;
+        top: 0px;
+        left: .75rem;
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top:50%;
+            left: .125rem;
+            margin-top: -.3rem;
+            width: .6rem;
+            height: .6rem;
+            border: 1px solid #333;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            border-top: none;
+            border-right: none;
+        }
+    }
+}
+
+.screen-content {
+    width: 100%;
+    position: absolute;
+    top: 2.25rem;
+    bottom: 0;
+    overflow: auto;
+    &.-bg-gray {
+        padding-top: .45rem;
+    }
+}
+
+.not-record {
+    padding-top: 8.75rem;
+    box-sizing: border-box;
+    height: 100%;
+    text-align: center;
+    &.-bg-gary{
+        background-color: #f6f6f6;
+    }
+    img {
+        width: 3rem;
+        height: 2.3rem;
+    }
+    span {
+        display: block;
+        padding-top: .5rem;
+        font-size: .7rem;
+    }
+    .btn-primary{
+        margin: 1.25rem;
+        display: inline-block;
+        width: 7.2rem;
+    }
+    &.welfare-record {
+        img {
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+        span {
+            padding-top: .8rem;
+        font-size: .75rem;
+        }
+    }
+}
+
+.done-tips {
+    text-align: center;
+    font-size: .65rem;
+    color: #999;
+}
+
+
+%absolute-fill{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin: auto;
+}

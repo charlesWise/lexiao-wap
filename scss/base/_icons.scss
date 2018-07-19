@@ -1,0 +1,177 @@
+/**
+ *  @chenrunsheng
+ *  $width icon宽度
+ *  $height icon高度
+ */
+
+@mixin sprite-background($width, $height, $rate:320/640) {
+  background-size: 100% 100%;
+  @extend %inline-block;
+  width: $width*$rate;
+  vertical-align: middle;
+  @include height(true, $height*$rate, $height*$rate+1);
+}
+
+.icon-cell-act {
+  background: url('../../icon/cell_act.png') no-repeat;
+  @include sprite-background(26px,26px);
+}
+
+.icon-cell {
+  background: url('../../icon/cell.png') no-repeat;
+  @include sprite-background(26px,26px);
+}
+
+.icon-close {
+  background: url('../../icon/close.png') no-repeat;
+  @include sprite-background(34px,34px);
+}
+
+.icon-right-check {
+  background: url('../../icon/right-check.png') no-repeat;
+  @include sprite-background(25px,18px);
+}
+
+.icon-tip {
+  background: url('../../icon/tip.png') no-repeat;
+  @include sprite-background(28px,28px);
+}
+
+.icon-store {
+  background: url('../../icon/store_gray.png') no-repeat;
+  @include sprite-background(26px,26px);
+}
+
+.icon-store-act {
+  background: url('../../icon/store.png') no-repeat;
+  @include sprite-background(26px,26px);
+}
+
+.icon-del {
+  background: url('../../icon/icon_del.png') no-repeat;
+  @include sprite-background(42px,42px,0.35);
+}
+
+.icon-del-big {
+  background: url('../../icon/icon_del.png') no-repeat;
+  @include sprite-background(42px,42px,0.4);
+}
+
+.icon-hide-eyes {
+  background: url('../../icon/hide_eyes.png') no-repeat;
+  @include sprite-background(32px,12px);
+}
+
+.icon-show-eyes {
+  background: url('../../icon/show_eyes.png') no-repeat;
+  @include sprite-background(32px,22px);
+}
+
+.icon-agree {
+  background: url('../../icon/agree.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-no-agree {
+  background: url('../../icon/no_agree.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-agree-protocol {
+  background: url('../../icon/agree_protocol.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-no-agree-protocol {
+  background: url('../../icon/no_agree_protocol.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-white-close {
+  background: url('../../icon/white_close.png') no-repeat;
+  @include sprite-background(36px,36px);
+}
+
+.icon-lx-logo {
+  background: url('../../images/logo/lx_logo.png') no-repeat;
+  @include sprite-background(540px,372px);
+}
+
+.icon-auth-logo {
+  background: url('../../images/logo/auth_logo.png') no-repeat;
+  @include sprite-background(238px,36px);
+}
+
+.icon-hook {
+  background: url('../../images/register/hook.png') no-repeat;
+  @include sprite-background(120px,120px);
+}
+
+.icon-left-gradient {
+  background: url('../../images/register/left_gradient.png') no-repeat;
+  @include sprite-background(100px,2px);
+}
+
+.icon-right-gradient {
+  background: url('../../images/register/right_gradient.png') no-repeat;
+  @include sprite-background(100px,2px);
+}
+
+.icon-trj-logo {
+  background: url('../../images/register/trj_logo.png') no-repeat;
+  @include sprite-background(140px,140px);
+}
+
+.icon-close-eye {
+  background: url('../../icon/close_eye.png') no-repeat;
+  @include sprite-background(32px,12px);
+}
+
+.icon-open-eye {
+  background: url('../../icon/open_eye.png') no-repeat;
+  @include sprite-background(32px,22px);
+}
+
+.icon-selected {
+  background: url('../../icon/selected.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-no-selected {
+  background: url('../../icon/noselected.png') no-repeat;
+  @include sprite-background(30px,30px);
+}
+
+.icon-cash-check {
+  background: url('../../icon/cash_check.png') no-repeat;
+  @include sprite-background(42px,42px);
+}
+
+.icon-cash-horn {
+  background: url('../../icon/cash_horn.png') no-repeat;
+  @include sprite-background(42px,42px);
+}
+
+.icon-error-120 {
+  background: url('../../icon/icon_error_120.png') no-repeat;
+  @include sprite-background(120px,120px);
+}
+
+.icon-search {
+  background: url('../../icon/icon_search.png') no-repeat;
+  @include sprite-background(48px,48px,0.3);
+}
+.icon-verify {
+  background: url('../../icon/verify.png') no-repeat;
+  @include sprite-background(42px,42px);
+}
+
+.icon-mobile {
+  background: url('../../icon/mobile.png') no-repeat;
+  @include sprite-background(42px,42px);
+}
+
+.icon-ceo {
+  background: url('../../icon/ceo.png') no-repeat;
+  @include sprite-background(88px,48px);
+}

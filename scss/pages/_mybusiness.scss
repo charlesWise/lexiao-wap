@@ -1,0 +1,362 @@
+@charset "UTF-8";
+//我是商户
+.mybusiness {
+    padding-bottom: 2.45rem;
+    background-color: transparent;
+    overflow-x: hidden;
+    .notice {
+        position: relative;
+        padding: 0 2rem 0 .75rem;
+        height: 1.7rem;
+        background: #FCDBBE;
+        overflow: hidden;
+        .notice-box {
+            color: #FF810C;
+            .notice-item {
+                font-size: .65rem;
+                line-height: 1.7rem;
+                position: relative;
+            }
+        }
+        .btn-close {
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            margin-top: -.35rem;
+            @include backgroundImages('/icon/icon_clear.png',.7rem,.7rem);
+        }
+    }
+    .mybusiness-name {
+        border-top: 1px solid #eee;
+        overflow: hidden;
+        position: relative;
+        padding: .425rem .75rem;
+        margin-bottom: .45rem;
+        @include displayFlex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #fff;
+        .picture {
+            width: 3.15rem;
+            height: 3.15rem;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+        .pic-text {
+            padding-left: .75rem;
+            h2{
+                font-size: .8rem;
+                color: #333;
+                i {
+                    position: relative;
+                    top: -.35rem;
+                    left: .6rem;
+                }
+            }
+            p{
+                font-size: .75rem;
+                color: #999;
+            }
+        }
+    }
+    .mybusiness-balance {
+        position: relative;
+        margin-bottom: .45rem;
+        background-color: #fff;
+        .handle {
+            @include height(true,2.25rem,2.25rem);
+            overflow: hidden;
+            font-size: .65rem;
+            color: #999;
+            border-bottom: 1px solid #F0F0F0;
+            padding: .75rem;
+            em{
+                font-size: .85rem;
+                color: #333;
+                vertical-align: middle;
+            }
+            a {
+                display: block;
+                @extend %fr;
+                width: 3.25rem;
+                height: 1.5rem;
+                line-height: 1.5rem;
+                text-align: center;
+                background: #FF912B;
+                box-shadow: 0 3px 10px 0 rgba(255,129,12,0.47);
+                border-radius: 100px;
+                color: #FFF;
+                font-size: .7rem;
+                margin-top: 7px;
+            }
+        }
+        .a_btn{
+            display: block;
+            font-size: .75rem;
+            color: #FF912B;
+            line-height: 1.8rem;
+            text-align: center;
+        }
+    }
+    .mybusiness-menu {
+        @include displayFlex;
+        padding: .75rem 0;
+        margin-bottom: .45rem;
+        background-color: #fff;
+        &.menu-three{
+            display: block;
+            overflow: hidden;
+            dl{
+                width: 33.3%;
+                float: left;
+            }
+        }
+        dl {
+            @include boxFlex(1);
+            width: 25%;
+            text-align: center;
+            dt {
+                color: #666;
+                font-size: .7rem;
+            }
+            dd {
+                margin: 0 auto;
+                width: 2.6rem;
+                height: 2.6rem;
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                i{
+                    position: absolute;
+                    width: .7rem;
+                    height: .7rem;
+                    background: red;
+                    font-size: .5rem;
+                    color: #FFFFFF;
+                    border-radius: 50%;
+                    line-height: .7rem;
+                    right: 2px;
+                    top: 2px;
+                }
+            }
+        }
+    }
+    .mybusiness-cumulative {
+        margin-bottom: .45rem;
+        background-color: #fff;
+        .cumulative {
+            padding: 0 .75rem;
+            li{
+                @include height(true,2.25rem,2.25rem);
+                font-size: .65rem;
+                color: #666;
+                border-bottom: 1px solid #F0F0F0;
+                span{
+                    @extend %fr;
+                    font-size: .85rem;
+                    color: #333;
+                }
+                &:last-child{
+                    border: 0;
+                }
+            }
+        }
+    }
+    .mybusiness-deiagram{
+        margin-bottom: .45rem;
+        background-color: #fff;
+        .tab-nav-item{
+            font-size: .6rem;
+        }
+        .deiagram{
+            padding: 0 .75rem;
+            .deiagram-fr{
+                font-size: .6rem;
+                color: #AAAAAA;
+                @include height(true,1.75rem,1.75rem);
+                text-align: right;
+            }
+        }
+        .deiagram-btn{
+            a{
+                width: 2.45rem;
+                @include height(true,1rem,1rem);
+                display: inline-block;
+                text-align: center;
+                border: 1px solid #FF912B;
+                border-radius: 16px;
+                font-size: .5rem;
+                color: #FF912B;
+                margin: .5rem 1.6rem;
+                &.active{
+                    background: #FF912B;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .mybusiness-invite {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2.45rem;
+        line-height: 2.45rem;
+        background-color: #fff;
+        text-align: center;
+        font-size: .75rem;
+        color: #FF810C;
+        box-shadow: 0 .1rem .2rem 0 #BDBDBD;
+        z-index: 10;
+    }
+}
+
+
+
+//资金记录
+.capitalrecord{
+    margin-top: -.45rem;
+}
+.record-item{
+    .record-item-li{
+        padding-left: 1.375rem;
+        position: relative;
+        overflow: hidden;
+        .record-item-line{
+            width: 1px;
+            height: 4.35rem;
+            background: #ccc;
+            margin-right: 1rem;
+            float: left;
+            i{
+                display: block;
+                position: absolute;
+                top: 1.1rem;
+                left: 1rem;
+                @include backgroundImages('/icon/icon_expenditure.png',.825rem,.975rem);
+            }
+        }
+        h5{
+            font-size: .8rem;
+            color: rgba(0,0,0,0.76);
+            letter-spacing: 0;
+            line-height: .8rem;
+            font-weight: normal;
+            padding-top: 1rem;
+        }
+        h6{
+            font-size: .6rem;
+            color: rgba(0,0,0,0.60);
+            line-height: .6rem;
+            font-weight: normal;
+            padding-top: .625rem;
+        }
+        span{
+            font-size: .8rem;
+            color: #51B341;
+            line-height: 1.2rem;
+            position: absolute;
+            right: 1.5rem;
+            top: 2.1rem;
+        }
+        &.income{
+            background: #fff;
+            .record-item-line{
+                i{
+                    @include backgroundImages('/icon/icon_income.png',.85rem,.975rem);
+                }
+            }
+            span{
+                color: #F7250E;
+            }
+        }
+    }
+}
+
+// ceo管理
+.ceo-manage-list {
+    .search-name {
+        background: #fff;
+        padding: .5rem 1rem;
+        .search-bar {
+            background: #e8e8ea;
+            @include displayFlex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            @include height(true, 1.6rem, 1.6rem);
+            @include prefixer(border-radius, 2rem, webkit o moz);
+            i {
+                position: relative;
+                top: -.1rem;
+                margin-right: .3rem;
+            }
+            input {
+                @include boxFlex(1);
+                font-size: .8rem;
+            }
+        }
+    }
+    .ceo-nav {
+        ul {
+            @include displayFlex;
+            background: #fff;
+            @include height(true, 2rem, 2rem);
+            padding-bottom: 1.6px;
+            li {
+                @include boxFlex(1);
+                text-align: center;
+                span {
+                    display: inline-block;
+                }
+                &.active {
+                    color: rgba(255,129,12,1);
+                    font-size: .8rem;
+                    span {
+                        border-bottom: 1.6px solid rgba(255,129,12,1);
+                    }
+                }
+            }
+        }
+    }
+    .ceo-list {
+        ul {
+            li {
+                background: #fff;
+                margin-top: .55rem;
+                padding: .5rem .8rem;
+                p {
+                    line-height: 1.7rem;
+                    &:nth-child(1) {
+                        span {
+                            &:nth-child(1) {
+                                color: rgba(51,51,51,1);
+                                font-size: .8rem;
+                                margin-right: .5rem;
+                            }
+                            &:nth-child(2) {
+                                color: rgba(136,136,136,1);
+                                font-size: .6rem;
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        span {
+                            color: rgba(153,153,153,1);
+                            font-size: .7rem;
+                            em {
+                                color: rgba(255,129,12,1);
+                            }
+                            &:nth-child(1) {
+                                margin-right: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

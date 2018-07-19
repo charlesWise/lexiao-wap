@@ -1,0 +1,94 @@
+@charset "UTF-8";
+//支付密码
+.paybox{
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    z-index: 100; 
+    width: 100%; 
+    // height: 100%; 
+    background: rgba(0, 0, 0, 0.7); 
+    display: block;
+}
+.inner-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+    .title{
+        background: #FAFAFA;
+        @include height(true,2.2rem,2.2rem);
+        font-size: .8rem;
+        color: #333333;
+        text-align:center;
+        margin: 0;
+    } 
+    .close{
+        @extend %absolute;
+        left: .75rem;
+        top: .675rem;
+        @include backgroundImages('/icon/close.png',.85rem,.85rem);
+    }
+    .key-del{
+        position: relative;
+        i{
+            position: absolute;
+            display: block;
+            @include backgroundImages('/icon/key-del.png',1.15rem,.9rem);
+            right: 2.5rem;
+            top: .45rem;
+        }
+    }
+    .tips{
+        font-size: .7rem;
+        color: #666666;
+        text-align: center;
+        line-height: 1.2rem;
+        margin: .9rem;
+    }
+    .notice{
+        font-size: .7rem;
+        color: #5294FF;
+        line-height: .7rem;
+        margin-right: .9rem;
+        text-align: right;
+    }
+}
+.flexable-box{
+    background: rgba(210,213,219,0.90);
+    margin-top: 5rem;
+    .flexable{
+        display: -webkit-box;
+        div{
+            @include boxFlex(1);
+            margin: .3rem;
+        }
+        .input-key{
+            background: #FFFFFF;
+            box-shadow: 0 2px 0 0 #848688;
+            border-radius: .4rem;
+            @include height(true,2.3rem,2.3rem);
+            text-align: center;
+        }
+    }
+}
+
+
+.input-box{
+    margin: 1.6rem .9rem .6rem .9rem;
+    @include displayFlex();
+    span{
+        @include boxFlex(1);
+        @include height(true,2.2rem,2.2rem);
+        text-align:center;
+        border: 1px solid rgba(0,0,0,0.12);
+        border-left: 0;
+        &:first-child{border-left: 1px solid rgba(0,0,0,0.12);}
+    }
+} 
+    .input-box .flexable>div:active{background:rgba(0,200,200,.5)}
+    .list-block .item-title{font-weight:normal!important;font-size:14px}ul li{position:relative}
+    
+     
+     

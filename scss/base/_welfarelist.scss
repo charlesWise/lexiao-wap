@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.welfare_list_section{
+    .welfare_list {
+        background-color: #fff;
+        padding-left: .75rem;
+        border-top: 1px solid #EEEEEE;
+        .welfare_list_item {
+            padding: .625rem .75rem .625rem 0;
+            box-sizing: border-box;
+            display: -webkit-box;
+            border-bottom: 1px solid #EEEEEE;
+            &::last{
+                border-bottom: 0;
+            }
+            .welfare_list_item_left{
+                width: 4.8rem;
+                height: 4.8rem;
+                margin-right: .55rem;
+                border-radius: .5rem;
+            }
+            .welfare_list_item_right {
+                -webkit-box-flex: 1;
+                font-size: .65rem;
+                color: #999999;
+                .welfare_list_item_shop_name_main {
+                    display: -webkit-box;
+                    display: flex;
+                    -webkit-box-pack: justify;
+                    justify-content: space-between;
+                    margin-bottom: 4px;
+                    .welfare_list_item_shop_name {
+                        max-width: 145px;
+                        font-size: .8rem;
+                        font-weight: 700;
+                        color: #111;
+                        padding-right: 8px;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .welfare_list_item_shop_tags {
+                        display: -webkit-box;
+                    }
+                }
+                .welfare_list_item_shop_name_sub {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                }
+                .welfare_list_item_item_price {
+                    display: -webkit-box;
+                    display: flex;
+                    -webkit-box-pack: justify;
+                    justify-content: space-between;
+                    height: .925rem;
+                    line-height: .925rem;
+                    margin-top: 4px;
+                    .welfare_list_item_price_related {
+                        display: -webkit-box;
+                        max-width: 145px;
+                    }
+                    .welfare_list_item_sale_desc{
+                        @extend %relative;
+                        color: #FF810C;
+                        padding-right: .575rem;
+                        .welfare_list_item_arrowent {
+                            position: absolute;
+                            right: 2px;
+                            top: 50%;
+                            margin-top: -4px;
+                            border: 1px solid #FF810C;
+                            transform: rotate(45deg);
+                            width: .3rem;
+                            height: .3rem;
+                            border-bottom: none;
+                            border-left: none;
+                            -webkit-transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

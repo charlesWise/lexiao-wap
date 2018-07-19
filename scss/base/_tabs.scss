@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.tabs{
+    &.-notborder{
+        .tab-nav{
+            margin: 0;
+            display: flex;
+            &:after,&:before{
+                display: none;
+            }
+        }
+    }
+    &.-fixed{
+        .tab-panel{
+            position: absolute;
+            top: 2.95rem;
+            bottom: 0;
+            width: 100%;
+            overflow: auto;
+        }
+    }
+    .tab-nav {
+        position: relative;
+        margin-top: .45rem;
+        height: 2.5rem;
+        background-color: white;
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            background-color: #ddd;
+            display: block;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+        &:after {
+            top: auto;
+            bottom: 0;
+        }
+        
+        .tab-nav-item{
+            position: relative;
+            height: 2.5rem;
+            text-align: center;
+            font-size: .75rem;
+            line-height: 2.5rem;
+            display: inline-block;
+            width:33%;
+            &.-active {
+                position: relative;
+                color: #ff810c;
+                &:after {
+                    content: ' ';
+                    position: absolute;
+                    z-index: 9;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -.75rem;
+                    width: 1.5rem;
+                    border-bottom: 2px solid #ff810c;
+                    @include prefixer(border-radius,2px);
+                }
+            }
+            .badge{
+                position: absolute;
+                right: .6rem;
+                top: .25rem;
+                display: block;
+                width: .7rem;
+                height: .7rem;
+                color: #fff;
+                line-height: .7rem;
+                font-size: .5rem;
+                border-radius: .7rem;
+                background-color: #F80000;
+            }
+        }
+    }
+    .tab-panel{
+        position: relative;
+    }
+}

@@ -1,0 +1,322 @@
+@charset "UTF-8";
+.shake{
+    background: #EA4146;
+    h3{
+        position: relative;
+        font-size: .9rem;
+        line-height: 1.25rem;
+        color: #FFE547;
+        text-align: center;
+        margin: 1.35rem auto .55rem auto;
+        a{
+            width: 2.9rem;
+            height: .85rem;
+            line-height: .85rem;
+            position: absolute;
+            right: .45rem;
+            top: 5px;
+            font-size: .6rem;
+            color: #fff;
+            border: 1px solid #FFFFFF;
+            border-radius: 100px;
+            text-align: center;
+        }
+    }
+    .shake_prize{
+        position: relative;
+        width: 16.5rem;
+        height: 16.2rem;
+        margin: 0 auto;
+        display: block;
+        .prize_bg{
+            width: 16.5rem;
+            left:0;
+            right:0;
+            position: absolute;
+            margin: auto;
+        }
+        .prize_shake{
+            width: 12.475rem;
+            height: 14.075rem;
+            position: absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin: auto;
+        }
+        .prize_status{
+            position:absolute;
+            height: 50%;
+            width: 50%;
+        }
+        .prize_text{
+            position: absolute;
+            bottom: 2rem;
+            text-align: center;
+            width: 100%;
+            color: #f24421;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+    .prize_btn{
+        display: block;
+        @include backgroundImages('/images/index/prize_btn.png',7.75rem,1.55rem);
+        line-height: 1.55rem;
+        text-align: center;
+        margin: 5px auto;
+        color: #f35209;
+        font-weight: bold;
+        font-weight: .75rem;
+    }
+    .a_prize_btn{
+        display: block;
+        font-size: .7rem;
+        color: #FFE4E4;
+        text-align: center;
+        margin: .75rem auto;
+        
+    }
+}
+
+.win_sucess{
+    position: absolute;
+    top: 20%;
+    left: 1.6rem;
+    width: 15.55rem;
+    border-radius: .4rem;
+    background: #fff;
+    z-index: 10;
+    text-align: center;
+    h1{
+        line-height: 2.525rem;
+        font-size: .8rem;
+        color: #333333;
+        border-bottom: 1px solid #E0E0E0;
+        .icon_del{
+            position: absolute;
+            right: .9rem;
+            top: .9rem;
+            display: inline-block;
+            @include backgroundImages('/icon/icon_del.png',.85rem,.85rem);
+        }
+    }
+    .no_prize{
+        line-height: .8rem;
+        font-size: .8rem;
+        color: #333333;
+        margin: 1.575rem auto 1.825rem auto;
+    }
+    .no_number{
+        font-size: .7rem;
+        color: #333333;
+        line-height: 1.05rem;
+        padding: 1.45rem 1.6rem;
+    }
+    .text{
+        margin: 1.05rem auto;
+        font-size: .65rem;
+        color: #666666;
+        em{
+            color: #FF810C;
+        }
+    }
+    p {
+        @include displayFlex;
+        a{
+            font-family: PingFangSC-Regular;
+            display: inline-block;
+            @include boxFlex(1);
+            line-height: 2.575rem;
+            font-size: .8rem;
+            color: #FF810C;
+            border-top: 1px solid #E0E0E0;
+            border-right: 1px solid #E0E0E0;
+            &:last-child{
+                border-right: 0;
+            }
+            &.active{
+                font-family: PingFangSC-Light;
+            }
+        }
+    }
+    .win_record{
+        padding: .75rem 1rem;
+        height: 7rem;
+        overflow-y: auto;
+        li{
+            width: 100%;
+            font-size: .65rem;
+            color: #333333;
+            line-height: .925rem;
+            text-align: left;
+            margin-bottom: 4px;
+            span{
+                @extend %fr;
+                color: #999999;
+            }
+            &.record_hu{
+                font-size: .6rem;
+                color: #999999;
+                margin-bottom: .35rem;
+            }
+        }
+        img{
+            width: 3.875rem;
+            height: 3.875rem;
+        }
+        &.win_no_record{
+            height: 6rem;
+            .no_wu{
+                font-size: .65rem;
+                color: #666666;
+                line-height: .8rem;
+            }
+        }
+    }
+    .win_btn{
+        width: 100%;
+        border-top: 1px solid #ddd;
+        display: block;
+        line-height: 2.575rem;
+        font-size: .8rem;
+        color: #FF810C;
+        text-align: center;
+    }
+    .win_rule{
+        text-align: left;
+        padding: .85rem .65rem 1.425rem .75rem;
+        font-size: .65rem;
+        line-height: .925rem;
+        color: #666666;
+    }
+
+    .win_cont{
+        display: box;
+        display: -webkit-box;
+        display: -moz-box;
+        margin: 1.1rem .875rem;
+        position: relative;
+        @include backgroundImages('/images/welfare/voucher.png',13.8rem,5.2rem);
+        &::after{
+            clear: both;
+        }
+        .win_cont_l{
+            margin: .6rem 0 .6rem .6rem;
+            text-align: left;
+            img{
+                width: 1.95rem;
+                height: 1.95rem;
+                margin-right: .375rem;
+                border-radius: 5px;
+                @extend %fl;
+            }
+            .win_text{
+                width: 6.75rem;
+                font-size: .55rem;
+                color: #333;
+                line-height: .8rem;
+                margin-top: .4rem;
+            }
+            .win_bot{
+                position: absolute;
+                bottom: .6rem;
+                font-size: .5rem;
+                color: #999999;
+                line-height: .5rem;
+            }
+        }
+        .win_cont_r{
+            margin: .6rem .6rem .6rem 0;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+           color: #FF4340;
+           text-align: right;
+           .win_red{
+               font-size: .8rem;
+               em{
+                   font-size: 1.05rem;
+               }
+           }
+           .win_small{
+               font-size: .5rem;
+           }
+        }
+    }
+}
+
+.success-popup-content {
+    width: 80%;
+    height: 34%;
+    margin-left: -40%;
+    margin-top: -37%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .popup-content {
+        background: #fff;
+        @include prefixer(border-radius, .5rem, webkit o moz);
+        width: 100%;
+        height: 14rem;
+        p {
+            padding: 0 .8rem;
+            &:nth-child(1) {
+                text-align: center;
+                font-size: .8rem;
+                color: rgba(51,51,51,1);
+                padding: .7rem 0;
+                border-bottom: 1px solid rgba(224,224,224,1);
+                position: relative;
+                a {
+                    position: absolute;
+                    top: .9rem;
+                    right: .9rem;
+                }
+            }
+            &:nth-child(2) {
+                font-size: .6rem;
+                color: rgba(102,102,102,1);
+                padding: 1rem 0 .7rem;
+                text-align: center;
+                a {
+                    color: rgba(255,145,43,1);
+                }
+            }
+            &.download {
+                height: 5.4rem;
+                text-align: center;
+                padding: .5rem 0 0;
+                a {
+                    display: block;
+                    width: 80%;
+                    @include prefixer(border-radius, 1rem, webkit o moz);
+                    line-height: 2.2rem;
+                    font-size: .7rem;
+                    color: #fff;
+                    margin: 0 auto .6rem;
+                    &:nth-child(1) {
+                        background: rgba(255,145,43,1);
+                    }
+                    &:nth-child(2) {
+                        background: rgba(255,145,43,.7);
+                    }
+                }
+            }
+            &:nth-child(4) {
+                font-size: .6rem;
+                padding: .7rem 0;
+                text-align: center;
+                a {
+                    color: rgba(51,51,51,1);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    p.close {
+        text-align: center;
+        margin: 1rem 0 0;
+    }
+}

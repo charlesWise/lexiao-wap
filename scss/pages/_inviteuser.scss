@@ -1,0 +1,225 @@
+.invite-user {
+    text-align: center;
+    .banner {
+        width: 100%;
+        height: 7.5rem;
+        img {
+            max-height: 7.5rem;
+        }
+    }
+    .invite-code {
+        padding: 1.5rem 0 2.5rem;
+        text-align: center;
+        .qr-code {
+            width: 7.5rem;
+            height: 7.5rem;
+        }
+        .title {
+            padding-top: .375rem;
+            color: #666;
+            font-size: .7rem;
+            span {
+                color: #FF810C;
+            }
+        }
+    }
+    .invite-share {
+        padding: 0 1.25rem 2.5rem;
+        display: flex;
+        .invite-share-item {
+            @include boxFlex(1);
+            text-align: center;
+            .icon {
+                display: block;
+                margin: 0 auto;
+                width: 2rem;
+                height: 2rem;
+                border: 1px solid #e7e7e7;
+                border-radius: 2rem;
+                background-color: #fff;
+                background-position: center center;
+                background-repeat: no-repeat;
+                &.-wechat {
+                    background-image: url(/icon/share/icon_wechat.png);
+                    background-size: 1.15rem .925rem;
+                }
+                &.-moments {
+                    background-image: url(/icon/share/icon_moments.png);
+                    background-size: 1.05rem 1.05rem;
+                }
+                &.-qq {
+                    background-image: url(/icon/share/icon_qq.png);
+                    background-size: .975rem 1.025rem;
+                }
+                &.-weibo {
+                    background-image: url(/icon/share/icon_weibo.png);
+                    background-size: 1.1rem .875rem;
+                }
+            }
+            .name {
+                padding-top: .375rem;
+                color: #999;
+                font-size: .65rem;
+            }
+        }
+    }
+    .link-my-invite {
+        color: #FF810C;
+        text-decoration: underline;
+    }
+}
+
+.my-invite-user {
+    background-color: white;
+    .my-invite-main {
+        padding: .75rem;
+        .-total {
+            box-sizing: border-box;
+            text-align: center;
+            height: 7.5rem;
+            padding: 1.25rem;
+            background-image: linear-gradient(-90deg, #FFB44F 0%, #FF6D29 96%);
+            box-shadow: 0 .25rem .325rem 0 rgba(255, 160, 68, 0.47);
+            border-radius: .3rem;
+            color: #fff;
+            dl {
+                padding-bottom: 1rem;
+                dt {
+                    font-size: .7rem;
+                }
+                dd {
+                    padding-top: .5rem;
+                    font-size: 1.325rem;
+                    line-height: 1.2;
+                }
+            }
+            ul {
+                display: flex;
+                li {
+                    @include boxFlex(1);
+                    font-size: .65rem;
+                    position: relative;
+                    &:last-child {
+                        &:after {
+                            position: absolute;
+                            display: block;
+                            overflow: hidden;
+                            left: 0;
+                            top: 50%;
+                            margin-top: -.45rem;
+                            height: .9rem;
+                            width: 1px;
+                            content: '';
+                            background-color: rgba(255, 255, 255, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+        .-filter {
+            padding: 1.3rem 0;
+            ul {
+                @include displayFlex;
+                @include clearfix;
+                li {
+                    @include boxFlex(1);
+                    text-align: center;
+                    span {
+                        color: #fff;
+                        font-size: 0.65rem;
+                        background: rgba(255,145,43,1);
+                        @include prefixer(border-radius, 4rem, webkit o moz);
+                        width: 6.5rem;
+                        @include height(true, 1.6rem, 1.6rem);
+                        display: inline-block;
+                        font-weight: lighter;
+                    }
+                    &.date-li {
+                        span {
+                            i {
+                                width: 0;
+                                height: 0;
+                                border-left: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                border-top: 6px solid #fff;
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-left: 0.3rem;
+                            }
+                            &.active {
+                                i {
+                                    border-top: none;
+                                    border-bottom: 5px solid #fff;
+                                }
+                            }
+                        }
+                    }
+                    &.money-li {
+                        span {
+                            position: relative;
+                            i {
+                                width: 0;
+                                height: 0;
+                                display: inline-block;
+                                vertical-align: middle;
+                                position: absolute;
+                                &:nth-child(1) {
+                                    border-left: 3px solid transparent;
+                                    border-right: 3px solid transparent;
+                                    border-bottom: 4px solid #fff;
+                                    top: .5rem;
+                                    right: 1.35rem;
+                                    &.active {
+                                        border-bottom: 5px solid rgba(255,255,255,0.5);
+                                    }
+                                }
+                                &:nth-child(2) {
+                                    border-left: 3px solid transparent;
+                                    border-right: 3px solid transparent;
+                                    border-top: 4px solid #fff;
+                                    bottom: .55rem;
+                                    right: 1.35rem;
+                                    &.active {
+                                        border-top: 5px solid rgba(255,255,255,0.5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .-data {
+            width: 100%;
+            border: 1px solid #eee;
+            td,
+            th {
+                width: 25%;
+                padding: .375rem;
+                line-height: 1.2;
+                border: 1px solid #eee;
+            }
+            thead {
+                tr {
+                    th {
+                        text-align: center;
+                        height: 1.95rem;
+                        box-sizing: border-box;
+                        font-size: .6rem;
+                        color: #5D4219;
+                        background: #FFF1E3;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-size: .5rem;
+                        text-align: center;
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
+}

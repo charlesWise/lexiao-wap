@@ -1,0 +1,622 @@
+@charset "UTF-8";
+//添加商户
+.-m-add{
+    padding-top: 0;
+    .-m-add-tabs{
+        background: #fff;
+        overflow: hidden;
+        .-m-add-nav{
+            width: 13.5rem;
+            margin: 0 auto;
+            position: relative;
+            margin-top: .45rem;
+            height: 1.45rem;
+            border: 1px solid #FF810C;
+            border-radius: .4rem;
+            overflow: hidden;
+            .tab-nav{
+
+            }
+            .tab-nav-item{
+                position: relative;
+                line-height: 1.45rem;
+                display:inline-block;
+                width: 33%;
+                height: 1.45rem;
+                text-align: center;
+                font-size: .7rem;
+                color: #FF810C;
+                &.-active {
+                    position: relative;
+                    background: #ff810c;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+    .-new-add-tabs{
+        position: fixed;
+        top: 2.25rem;
+        width: 100%;
+        z-index: 2;
+    }
+    .-new-tab-panel{
+        position: fixed;
+        width: 100%;
+        top: 3.7rem;
+        bottom: 0rem;
+        overflow: auto;
+    }
+    .add-gary{
+        font-size: .6rem;
+        color: #999;
+        padding: 0 0 .45rem .75rem;
+    }
+    .add{
+        padding: .75rem 0 .75rem .75rem;
+        background-color: #fff;
+        margin-bottom: .45rem;
+        .add-line{
+            position: relative;
+            .icon_delete{
+                position: absolute;
+                display: inline-block;
+                @include backgroundImages('/icon/icon_delete.png',.7rem,.7rem);
+                right: .75rem;
+                top: 2.2rem;
+            }
+        }
+        
+        .add-item {
+            position: relative;
+            overflow: hidden;
+            @include displayFlex;
+            padding: .5rem 0;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            font-size: .7rem;
+            background-color: #fff;
+            border-bottom: .025rem solid #E0E0E0;
+            &:last-child{
+                border: 0;
+            }
+            input {
+                @include displayFlex;
+                @include boxFlex(auto);
+                padding: .25rem 0;
+                min-height: 1.45rem;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                border: none;
+                text-align: left;
+                &::-webkit-input-placeholder { 
+                    color: #BDBDBD;
+                }
+                &:focus {
+                    background: no-repeat 0 0 scroll ＃EEEEEE;
+                    border: none;
+                    outline: medium;
+                    color: #333;
+                }
+            }
+            .-label {
+                box-sizing: border-box;
+                width: 4.7rem;
+                line-height: 1.45rem;
+                white-space: nowrap;
+                &.-required {
+                    position: relative;
+                    padding-left: .5rem;
+                    &:after {
+                        content: '*';
+                        position: absolute;
+                        left: 0;
+                        color: #FF810C;
+                    }
+                }
+            }
+            .-value {
+                @include displayFlex;
+                position: relative;
+                @include boxFlex(1);
+                width: 100%;
+                min-height: 1.45rem;
+                line-height: 1.45rem;
+                text-align: left;
+                i.division {
+                    margin: 0 .8rem 0 0;
+                }
+                input {
+                    &.area-code {
+                        width: 1rem;
+                    }
+                    &.seat-number {
+                        width: 5rem;
+                    }
+                }
+                span.switch {
+                    color: #ff810c;
+                    font-size: .6rem;
+                    margin: 0 .65rem 0 0;
+                }
+                &.-c-gray {
+                    line-height: 1.5;
+                    min-height: 1.225rem;
+                    padding-top: .225rem;
+                    color: #999;
+                }
+                &.-address {
+                    display: block;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 2px;
+                        top: .55rem;
+                        border: 1px solid #999;
+                        transform: rotate(45deg);
+                        width: .3rem;
+                        height: .3rem;
+                        border-bottom: none;
+                        border-left: none;
+                        -webkit-transform: rotate(45deg);
+                    }
+                }
+                
+                .-select {
+                    position: relative;
+                    width: 100%;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 2px;
+                        top: 50%;
+                        margin-top: -.2rem;
+                        border: 1px solid #999;
+                        transform: rotate(45deg);
+                        width: .4rem;
+                        height: .4rem;
+                        border-bottom: none;
+                        border-left: none;
+                        -webkit-transform: rotate(45deg);
+                    }
+                    select {
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                    }
+                }
+            }
+            &.-gallery {
+                display: block;
+                padding: .5rem 0;
+                line-height: 1.45rem;
+                box-sizing: border-box;
+                font-size: .7rem;
+                .-label {
+                    float: left;
+                }
+                .-value {
+                    padding-left: 4.7rem;
+                    display: block;
+                }
+                .-gallery-box {
+                    padding-top: .5rem;
+                    overflow: hidden;
+                    li {
+                        float: left;
+                        margin-bottom: .5rem;
+                        width: 8.375rem;
+                        height: 4.5rem;
+                        overflow: hidden;
+                        text-align: center;
+                        @include displayFlex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid #eee;
+                        box-sizing: border-box;
+                        border-radius: .1rem;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                        &:nth-of-type(even) {
+                            float: right;
+                        }
+                    }
+                }
+                .-gallery-box-pic{
+                    padding-top: .5rem;
+                    overflow: hidden;
+                    li{
+                        position: relative;
+                        float: left;
+                        margin-bottom: .5rem;
+                        width: 5.25rem;
+                        height: 3.4rem;
+                        text-align: center;
+                        @include displayFlex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid #eee;
+                        box-sizing: border-box;
+                        border-radius: .1rem;
+                        margin-right: .75rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: .2rem;
+                        }
+                        &:nth-child(4){
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .-gallery-box-yz{
+                    //padding-top: .5rem;
+                    // overflow: hidden;
+                    text-align: center;
+                    position: relative;
+                    width: 6.5rem;
+                    margin-top: .5rem;
+                    img{
+                        width: 6.5rem;
+                        height: 4.25rem;
+                    }
+                }
+                .-gallery-box-card{
+                    li{
+                        float: left;
+                        margin-bottom: .5rem;
+                        // overflow: hidden;
+                        text-align: center;
+                        justify-content: center;
+                        align-items: center;
+                        box-sizing: border-box;
+                        border-radius: .1rem;
+                        margin-right: 1.125rem;
+                        position: relative;
+                        img {
+                            border-radius: .2rem;
+                            width: 6.5rem;
+                            height: 4.25rem;
+                        }
+                        p{
+                            font-size: .6rem;
+                            color: #999999;
+                            line-height: .6rem;
+                            margin-top: .4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .-i-address-fr{
+        &:after{
+            content: '';
+            position: absolute;
+            left: 338px;
+            top: 50%;
+            margin-top: -.2rem;
+            border: 1px solid #999;
+            transform: rotate(45deg);
+            width: .4rem;
+            height: .4rem;
+            border-bottom: none;
+            border-left: none;
+            -webkit-transform: rotate(45deg);
+        }
+    }
+    .icon_more{
+        display: inline-block;
+        @include backgroundImages('/icon/icon_more.png',.4rem,.75rem);
+        vertical-align: sub;
+        margin-top: .25rem;
+        margin-right: .75rem;
+    }
+    .-merchant-logo{
+        position: relative;
+        width: 3rem;
+        img{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    .-gallery,.-gallery-box{
+        li{
+            border: 0!important;
+        }
+    }
+    
+    .-textarea{
+        textarea{
+            resize: none;
+            width: 97%;
+            min-height: 5rem;
+            border: 0;
+            padding: .2rem;
+            font-size: .75rem;
+            letter-spacing: 0;
+            line-height: 1.05rem;
+            &::-webkit-input-placeholder { 
+                color: #BDBDBD;
+            }
+            &:focus {
+                color: #333;
+            }
+        }
+        em{
+            position: absolute;
+            right: .75rem;
+            bottom: .5rem;
+            font-size: .75rem;
+            color: #666;
+        }
+    }
+    .-full-add{
+        width: 100%;
+        margin-left: 4.7rem;
+        padding-top: .5rem;
+        margin-top: -.5rem; 
+        border-top: .025rem solid #E0E0E0;
+        input{
+            width: 12.25rem;
+            border: 0;
+            resize: none;
+            padding: .25rem 0;
+        }
+    }
+    .add-reward{
+        font-size: .65rem;
+        color: #5294FF;
+        padding: .6rem 0;
+        margin-bottom: 1.5rem;
+        .icon_add{
+            display: inline-block;
+            @include backgroundImages('/icon/icon_add.png',.7rem,.7rem);
+            vertical-align: middle;
+            margin-right: .225rem;
+        }
+    }
+    .colorbd{
+        color: #BDBDBD;
+    }
+    .sign{
+        position: absolute;
+        right: .75rem;
+    }
+    .add-btn{
+        padding: .5rem .75rem;
+        @include displayFlex;
+        position: fixed;
+        bottom: 0;
+        background: #FFF;
+        z-index: 2;
+        .add-btn-fl{
+            border: 1px solid #ff810c;
+            background-color: transparent;
+            color: #ff810c;
+            width: 4.5rem;
+            height: 2.15rem;
+            line-height: 2.15rem;
+            border-radius: .2rem;
+            font-size: .75rem;
+            text-align: center;
+            box-sizing: border-box;
+            margin-right: .5rem;
+        }
+        .add-btn-fr{
+            width: 12.25rem;
+            height: 2.15rem;
+            line-height: 2.15rem;
+            background-color: #ff810c;
+            border-radius: .2rem;
+            font-size: .75rem;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+    .icon_del{
+        display: inline-block;
+        @include backgroundImages('/icon/icon_del.png',.7rem,.7rem);
+        position: absolute;
+        right: -0.35rem;
+        top: -0.35rem;
+        z-index: 1;
+    }
+}
+.modify-tips{
+    width: 100%;
+    text-align: center;
+    @include height(true,2.5rem,2.5rem);
+    margin-top: .45rem;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    &.active{
+        color: #ff810c;
+    }
+}
+//选择开户行
+.classification{
+    background: #FFF;
+    ul{
+        padding: 0 .75rem;
+        li{
+            // @include height(true,2.5rem,2.5rem);
+            padding: .6rem 0;
+            position: relative;
+            border-bottom: .025rem solid #E0E0E0;
+            i{
+                content: '';
+                position: absolute;
+                left: 338px;
+                top: 50%;
+                margin-top: -.2rem;
+                border: 1px solid #999;
+                transform: rotate(45deg);
+                width: .4rem;
+                height: .4rem;
+                border-bottom: none;
+                border-left: none;
+                -webkit-transform: rotate(45deg);
+            }
+        }
+    }
+}
+.add-notice{
+    background: #FCDBBE;
+    font-size: .6rem;
+    color: #FF810C;
+    padding: .45rem .75rem;
+}
+.add-tabs{
+    margin-top: -.45rem;
+}
+.business-award {
+    padding: .75rem;
+    box-sizing: border-box;
+    min-height: 90%;
+    background-color: #fff;
+    .business-award-table {
+        width: 100%;
+        background: #FCFCFC;
+        border: 1px solid #eee;
+        td,
+        th {
+            width: 50%;
+            height: 1.95rem;
+            line-height: 1.95rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            color: #999;
+            font-size: .65rem;
+        }
+        th {
+            font-size: .7rem;
+            background-color: #FFF1E3;
+            color: #5D4219;
+            font-weight: normal;
+        }
+    }
+}
+.reason-text{
+    font-size: 16px;
+    padding: 0.4rem 0.75rem;
+    color: #FF810C;
+    background: #FCDBBE;
+    text-align: center;
+    p{
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.removemerchant-text{
+    font-size: 16px;
+    padding: 0.4rem 0.75rem;
+    background: #FCDBBE;
+    p{
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: .65rem;
+        color: #FF4340;
+        line-height: .975rem;
+    }
+}
+
+.-full-add{
+        width: 100%;
+        margin-left: 4.7rem;
+        padding-top: .5rem;
+        margin-top: -.5rem; 
+        border-top: .025rem solid #E0E0E0;
+        input{
+            width: 12.25rem;
+            border: 0;
+            resize: none;
+            padding: .25rem 0;
+        }
+    }
+.i-add-fr{
+    position: absolute;
+    right:.75rem;
+}
+// 选择银行
+.choose-open-bank {
+    .letter_list {
+        position: fixed;
+        top: 4rem;
+        z-index: 1;
+        width: 1rem;
+        a {
+            font-size: .6rem;
+        }
+    }
+    .bd-bank-list {
+        padding-top: 2.7rem;
+        dl {
+            dt {
+                background: rgba(243,243,243,1);
+                color: rgba(51,51,51,1);
+                font-size: .7rem;
+                padding-left: .7rem;
+                @include height(true, 1.2rem, 1.2rem);
+            }
+            dd {
+                background: #fff;
+                padding: 0 .7rem 0 0;
+                ul {
+                    li {
+                        // @include height(true, 2.2rem, 2.2rem);
+                        padding: .6rem 0;
+                        border-bottom: rgba(0,0,0,0.12) 1px solid;
+                        color: rgba(51,51,51,1);
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.search-bank-result {
+    height: 30rem;
+    overflow: auto;
+    background: #fff;
+    ul {
+        padding: 0 .7rem;
+        li {
+            @include height(true, 1.8rem, 1.8rem);
+            color: rgba(51,51,51,1);
+            font-size: .75rem;
+            border-bottom: rgba(0,0,0,0.12) 1px solid;
+            span {
+                color: #fd8128;
+            }
+        }
+    }
+    p.no-result {
+        @include height(true, 2rem, 2rem);
+        text-align: center;
+        color: rgba(51,51,51,1);
+        font-size: .7rem;
+        background: rgba(240,240,240,1);
+    }
+}
+
+//子分支行
+.branch-bank-wrap {
+    .branch-bank-list {
+        padding-top: 2.7rem;
+        ul {
+            li {
+                
+            }
+        }
+    }
+}

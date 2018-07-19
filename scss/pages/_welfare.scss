@@ -1,0 +1,579 @@
+@charset "UTF-8";
+// 我的福利列表
+.welfare-list {
+    padding: .75rem;
+    background-color: #f6f6f6;
+    .welfare-item {
+        position: relative;
+        margin-bottom: .75rem;
+        padding: .75rem 0 0 .75rem;
+        background-color: #fff;
+        @include prefixer(box-shadow, 0 .225rem .225rem .075rem rgba(235, 238, 240, 0.7));
+        @include prefixer(border-radius, .2rem);
+        &::before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 10;
+            left: -.3rem;
+            top: 4.25rem;
+            width: .6rem;
+            height: .6rem;
+            @include prefixer(border-radius, .6rem);
+            background-color: #f6f6f6;
+        }
+        &:after {
+            left: auto;
+            right: -.3rem;
+        }
+        .picture {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid #eee;
+            float: left;
+            @include prefixer(border-radius, .15rem);
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .amount {
+            line-height: 1.2;
+            text-align: right;
+            font-size: 26px;
+            font-weight: bold;
+            color: #ff4340;
+            i {
+                margin-right: .1rem;
+                font-style: normal;
+                font-size: 20px;
+            }
+        }
+        .welfare_btn{
+            width: 3.15rem;
+            height: 1.05rem;
+            line-height: 1.05rem;
+            text-align: center;
+            background: #FF912B;
+            border-radius: 100px;
+            font-size: .6rem;
+            color: #FFFFFF;
+            float: right;
+            margin: 1.35rem .75rem 0;
+        }
+        .condition {
+            font-size: 12px;
+            color: #FF4340;
+            text-align: right;
+            margin-left: 3px;
+            display: inline-block;
+            font-weight: normal;
+        }
+        .title {
+            font-size: .7rem;
+            line-height: 0.7rem;
+            font-weight: normal;
+        }
+        .describe {
+            border-top: 1px dashed #eee;
+            height: 1.7rem;
+            line-height: 1.7rem;
+            font-size: 12px;
+            .status {
+                display: none;
+                float: right;
+                color: #FF810C;
+                margin-right: .75rem;
+            }
+            .time {
+                float: left;
+                color: #999;
+            }
+        }
+        &.-disabled {
+            .picture {
+                img {
+                    @include prefixer(filter, grayscale(100%));
+                    filter: gray;
+                }
+            }
+            .amount,
+            .condition {
+                color: #999;
+                margin-left: 3px;
+                display: inline-block;
+            }
+            .title {
+                color: #666;
+            }
+            .describe {
+                .status {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//福利详情
+.welfare-detail {
+    .go-to-store {
+        width: 100%;
+        @include height(true, 2.4rem, 2.4rem);
+        background: #fff;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        p {
+            color: rgba(155,155,155,1);
+        }
+    }
+    .focus-figure {
+        position: relative;
+        z-index: 10;
+        height: 8.35rem;
+        img {
+            width: 18.75rem;
+            height: 8.35rem;
+        }
+        .-mask {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.00) 69%, #F6F6F6 100%);
+        }
+    }
+    .welfare-info {
+        position: relative;
+        z-index: 20;
+        margin: -1rem .75rem .75rem;
+        padding: .75rem .75rem 0;
+        min-height: 12.5rem;
+        background: #FFF;
+        border-left: 1px solid #EEE;
+        border-right: 1px solid #EEE;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            top: -.16rem;
+            background: url(/images/welfare/garnish_top.png) repeat-x -.2rem top / .75rem .2rem;
+            height: .2rem;
+            border-left: 1px solid #EEE;
+            border-right: 1px solid #EEE;
+        }
+        &:after {
+            top: auto;
+            bottom: -.16rem;
+            background-image: url(/images/welfare/garnish_bottom.png);
+        }
+        .title {
+            font-size: .95rem;
+            text-align: center;
+            span {
+                color: #FF4340;
+            }
+        }
+        .condition {
+            color: #FF4340;
+            text-align: center;
+        }
+        .btn-wrap {
+            margin: .75rem;
+        }
+        dl {
+            padding: .75rem;
+            &:last-child {
+                border-top: 1px solid #eee;
+            }
+            dt {
+                position: relative;
+                padding-bottom: .25rem;
+                font-size: .7rem;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: -.75rem;
+                    top: .375rem;
+                    width: .25rem;
+                    height: .25rem;
+                    @include prefixer(border-radius, .25rem);
+                    background-color: #ccc;
+                }
+            }
+            dd {
+                font-size: .65rem;
+                line-height: 1.1rem;
+                color: #999;
+            }
+        }
+        &.coudet_info{
+            h3{
+                text-align: left;
+            }
+            .condition{
+                text-align: left;
+            }
+            .allowance{
+                margin: .75rem 0 .2rem 0;
+                padding-top: .75rem;
+                border-top: 1px dashed #E2E2E2;
+                font-size: .65rem;
+                color: #999;
+                span{
+                    @extend %fr;
+                }
+                .org_em{
+                    color: #FF810C;
+                }
+                .red_em{
+                    color: #FF4340;
+                }
+            }
+        }
+    }
+}
+
+//选择商户
+.s-merchant-list {
+    padding-bottom: .45rem;
+    margin-bottom: 90px;
+    &.s-merchant-app-list {
+        margin-bottom: 54px;
+    }
+    .done-tips {
+        padding: .75rem 0 .3rem;
+        border-top: 1px solid #eee;
+    }
+    .s-merchant-header {
+        padding: 0 .75rem;
+        height: 2.2rem;
+        background-color: #fff;
+        h2 {
+            float: left;
+            font-size: .75rem;
+            line-height: 2.2rem;
+        }
+        span {
+            float: right;
+            position: relative;
+            display: block;
+            padding: 1.125rem;
+            &:after {
+                content: '';
+                position: absolute;
+                right: 2px;
+                top: 50%;
+                margin-top: -.25rem;
+                border: 1px solid #999;
+                transform: rotate(45deg);
+                width: .5rem;
+                height: .5rem;
+                border-bottom: none;
+                border-left: none;
+                -webkit-transform: rotate(45deg);
+            }
+        }
+    }
+    .s-merchant-item {
+        position: relative;
+        border-top: 1px solid #eee;
+        background-color: #fff;
+        padding: .75rem .75rem .75rem 4.9rem;
+        .picture {
+            float: left;
+            margin-left: -4.15rem;
+            width: 3.65rem;
+            height: 3.65rem;
+            border: 1px solid #eee;
+            box-sizing: border-box;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .title {
+            position: relative;
+            font-size: .75rem;
+            padding-right: 2.5rem;
+            .distance {
+                font-style: normal;
+                position: absolute;
+                right: 0;
+                top: .125rem;
+                font-size: 12px;
+                color: #999;
+            }
+        }
+        p {
+            overflow: hidden;
+            line-height: 1.6;
+            font-size: .6rem;
+            color: #999;
+            &.desc {
+                padding-top: .25rem;
+                font-size: .65rem;
+            }
+            &.sell {
+                padding-top: .45rem;
+                span {
+                    float: right;
+                    position: relative;
+                    padding-right: .45rem;
+                    color: #FF912B;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 2px;
+                        top: 50%;
+                        margin-top: -.125rem;
+                        width: .25rem;
+                        height: .25rem;
+                        border: 1px solid #FF810C;
+                        border-bottom: none;
+                        border-left: none;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                    }
+                }
+                .btn-payment {
+                    float: right;
+                    height: 1.05rem;
+                    padding: 0 .6rem;
+                    background: #FF912B;
+                    @include prefixer(border-radius, 2.5rem);
+                    border: none;
+                    color: #fff;
+                }
+            }
+            &.payment {
+                padding-top: .75rem;
+                text-align: right;
+                .btn-payment {
+                    height: 1.05rem;
+                    padding: 0 .6rem;
+                    background: #FF912B;
+                    @include prefixer(border-radius, 2.5rem);
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .s-merchant-footer {
+        height: 1.7rem;
+        line-height: 1.7rem;
+        font-size: .65rem;
+        color: #FF912B;
+        text-align: center;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        i {
+            display: inline-block;
+            width: .35rem;
+            height: .35rem;
+            border: 1px solid #FF810C;
+            border-bottom: none;
+            border-left: none;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    }
+}
+
+// 精品福利
+.voucher{
+    background: #f6f6f6;
+    ul{
+        margin: 0 auto;
+        padding-top: .45rem;
+    }
+    .voucher_bg{
+        position: relative;
+        @include backgroundImages('/images/welfare/voucher.png',17.5rem,7rem);
+        margin: 0 auto;
+        img{
+            width: 2.45rem;
+            height: 2.45rem;
+            border-radius: 5px;
+            margin: .75rem .45rem .75rem .75rem;
+        }
+        .voucher_cont{
+            @extend %displaybox;
+            .voucher_fr{
+                margin-top: .75rem;
+                box-flex:1;
+                -webkit-box-flex:1;
+                -moz-box-flex:1;
+                .a_btn{
+                    display: block;
+                    position: absolute;
+                    right: .75rem;
+                    top: 1.9rem;
+                    width: 3.5rem;
+                    @include height(true,1.35rem,1.35rem);
+                    text-align: center;
+                    background: #FF912B;
+                    box-shadow: 0 3px 10px 0 rgba(255,129,12,0.47);
+                    border-radius: 100px;
+                    font-size: .65rem;
+                    color: #FFFFFF;
+                }
+                .vou_one{
+                    font-size: .7rem;
+                    color: #333333;
+                    line-height: 1rem;
+                }
+                .vou_red{
+                    font-size: 1rem;
+                    color: #FF4340;
+                    line-height: 1.3rem;
+                    em{
+                        font-size: 1.3rem;
+                    }
+                    i{
+                        font-size: .6rem;
+                    }
+                }
+                .vou_hui{
+                    font-size: .6rem;
+                    color: #999999;
+                    line-height: .6rem;
+                }
+                .vou_bot{
+                    position: absolute;
+                    left: .75rem;
+                    bottom: 1rem;
+                    font-size: .65rem;
+                    line-height: .65rem;
+                    color: #999;
+                    em{
+                        color: #FF912B;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+//抽奖
+.s-luck-draw{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 22;
+    .points{
+        background: #FFF3E9;
+        @include height(true,1.5rem,1.5rem);
+        font-size: .7rem;
+        color: #FF7C03;
+        padding-left: .75rem;
+    }
+    a{
+        font-size: .8rem;
+        color: #FFF;
+        text-align: center;
+        @include height(true,2.45rem,2.45rem);
+    }
+    .draw_btn{
+        display: block;
+        background: #FF810C;
+    }
+    .draw_btn_l{
+        display: inline-block;
+        width: 35%;
+        background: #FF810C;
+    }
+    .draw_btn_r{
+        width: 65%;
+        display: inline-block;
+        background: #FFAA16;
+        @extend %fr;
+    }
+}
+
+//积分
+.integral-wrap{
+    background: #FFF;
+}
+.integral{
+    @include backgroundImages('/images/integral/integral.png',18.75rem,23.275rem);
+    .integral-cont{
+        width: 17.25rem;
+        height: 9rem;
+        margin: .625rem auto;
+        padding-top: .25rem;
+        div{
+            width: 2.7rem;
+            height: 2.7rem;
+            background: #FFF;
+            @include prefixer(border-radius, 50%, webkit o moz);
+            margin: 0 auto;
+            text-align: center;
+            img{
+                width: 1.75rem;
+                margin: .4rem auto;
+            }
+        }
+        .integral-cont-p1{
+            font-size: .65rem;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 1.65rem;
+        }
+        .integral-cont-p2{
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    .integral-text{
+        font-size: .65rem;
+        color: #AEB5B9;
+        text-align: center;
+        margin-top: 6.25rem;
+    }
+    
+}
+.authorization-bg{
+    display: block;
+    width: 12.8rem;
+    margin: 3.875rem auto;
+}
+.integral-text{
+    text-align: center;
+    h3{
+        font-size: .8rem;
+        color: #333333;
+        line-height: .8rem;
+        margin-bottom: .5rem;
+    }
+    h4{
+        font-size: .65rem;
+        color: #999999;
+        line-height: .65rem;
+        font-weight: normal;
+    }
+    button{
+        display: block;
+        // background-image: linear-gradient(-90deg, #F9691A 0%, #FF4400 100%);
+        // box-shadow: 0 2px 5px 0 #FF5A00;
+        @include prefixer(border-radius,100px);
+        @include backgroundImages('/images/integral/integral_btn.png',16.95rem,2.75rem);
+        font-size: .8rem;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 2.75rem;
+        border: 0;
+        margin: 1.25rem auto;
+    }
+}
